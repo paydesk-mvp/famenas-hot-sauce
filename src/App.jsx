@@ -30,8 +30,8 @@ export default function App() {
         </button>
       </div>
 
-      <nav className="w-full border-b border-[#1f1f1f] bg-black/95 backdrop-blur sticky top-0 z-50 relative">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 py-3 md:py-4">
+      <nav className="w-full border-b border-[#1f1f1f] bg-black/95 backdrop-blur sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 py-3 md:py-4 relative">
 
           <a href="#" onClick={closeMenu} className="flex items-center gap-3 md:gap-4">
             <img
@@ -71,19 +71,19 @@ export default function App() {
               <span className="w-6 h-[3px] bg-white rounded"></span>
             </div>
           </button>
-        </div>
 
-        {mobileMenuOpen && (
-          <div className="absolute left-0 right-0 top-full md:hidden bg-black/98 border-b border-[#222] shadow-2xl">
-            <div className="px-6 py-6 flex flex-col gap-5 text-base uppercase tracking-wide">
-              <a href="#" onClick={closeMenu} className="hover:text-orange-500">Home</a>
-              <a href="#shop" onClick={closeMenu} className="hover:text-orange-500">Shop</a>
-              <a href="#story" onClick={closeMenu} className="hover:text-orange-500">Our Story</a>
-              <a href="#reviews" onClick={closeMenu} className="hover:text-orange-500">Reviews</a>
-              <a href="#contact" onClick={closeMenu} className="hover:text-orange-500">Contact</a>
+          {mobileMenuOpen && (
+            <div className="absolute right-4 top-[78px] w-[260px] md:hidden bg-black border border-[#333] rounded-2xl shadow-2xl overflow-hidden">
+              <div className="flex flex-col text-base uppercase tracking-wide">
+                <a href="#" onClick={closeMenu} className="px-6 py-4 border-b border-[#222] hover:bg-[#111] hover:text-orange-500">Home</a>
+                <a href="#shop" onClick={closeMenu} className="px-6 py-4 border-b border-[#222] hover:bg-[#111] hover:text-orange-500">Shop</a>
+                <a href="#story" onClick={closeMenu} className="px-6 py-4 border-b border-[#222] hover:bg-[#111] hover:text-orange-500">Our Story</a>
+                <a href="#reviews" onClick={closeMenu} className="px-6 py-4 border-b border-[#222] hover:bg-[#111] hover:text-orange-500">Reviews</a>
+                <a href="#contact" onClick={closeMenu} className="px-6 py-4 hover:bg-[#111] hover:text-orange-500">Contact</a>
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </nav>
 
       <section className="relative overflow-hidden bg-gradient-to-br from-black via-[#120500] to-black">
@@ -93,11 +93,7 @@ export default function App() {
           <div className="grid lg:grid-cols-2 gap-16 md:gap-20 items-center">
 
             <div>
-              <img
-                src={logo}
-                alt="Famena Logo"
-                className="w-32 md:w-48 mb-8"
-              />
+              <img src={logo} alt="Famena Logo" className="w-32 md:w-48 mb-8" />
 
               <p className="text-orange-400 text-base md:text-lg mb-5 italic">
                 Caribbean Heat. Winnipeg Made.
@@ -116,17 +112,11 @@ export default function App() {
               </p>
 
               <div className="hidden md:flex flex-col sm:flex-row gap-5">
-                <button
-                  onClick={goToCheckout}
-                  className="bg-orange-500 hover:bg-orange-600 transition px-10 py-5 rounded-2xl text-lg font-black"
-                >
+                <button onClick={goToCheckout} className="bg-orange-500 hover:bg-orange-600 transition px-10 py-5 rounded-2xl text-lg font-black">
                   BUY HOT SAUCE — $20
                 </button>
 
-                <a
-                  href="#contact"
-                  className="border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white transition px-10 py-5 rounded-2xl text-lg font-black text-center"
-                >
+                <a href="#contact" className="border border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white transition px-10 py-5 rounded-2xl text-lg font-black text-center">
                   VISIT RESTAURANT
                 </a>
               </div>
@@ -175,11 +165,7 @@ export default function App() {
       <section id="shop" className="max-w-7xl mx-auto px-4 md:px-6 py-20 md:py-24">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <img
-              src={roti}
-              alt="Roti"
-              className="rounded-3xl border border-[#222] shadow-2xl"
-            />
+            <img src={roti} alt="Roti" className="rounded-3xl border border-[#222] shadow-2xl" />
           </div>
 
           <div id="story">
@@ -205,10 +191,7 @@ export default function App() {
               $20 CAD
             </div>
 
-            <button
-              onClick={goToCheckout}
-              className="bg-orange-500 hover:bg-orange-600 transition px-10 py-5 rounded-2xl text-lg font-black"
-            >
+            <button onClick={goToCheckout} className="bg-orange-500 hover:bg-orange-600 transition px-10 py-5 rounded-2xl text-lg font-black">
               ADD TO CART
             </button>
           </div>
@@ -224,25 +207,19 @@ export default function App() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-[#111] border border-[#222] rounded-3xl p-8">
               <div className="text-orange-500 text-2xl mb-4">★★★★★</div>
-              <p className="text-gray-300 leading-8 mb-6">
-                “Best hot sauce I’ve had in years. Perfect balance of heat and flavour.”
-              </p>
+              <p className="text-gray-300 leading-8 mb-6">“Best hot sauce I’ve had in years. Perfect balance of heat and flavour.”</p>
               <div className="text-white font-bold">— Jason M.</div>
             </div>
 
             <div className="bg-[#111] border border-[#222] rounded-3xl p-8">
               <div className="text-orange-500 text-2xl mb-4">★★★★★</div>
-              <p className="text-gray-300 leading-8 mb-6">
-                “I came for the roti and left with three bottles of sauce.”
-              </p>
+              <p className="text-gray-300 leading-8 mb-6">“I came for the roti and left with three bottles of sauce.”</p>
               <div className="text-white font-bold">— Sarah T.</div>
             </div>
 
             <div className="bg-[#111] border border-[#222] rounded-3xl p-8">
               <div className="text-orange-500 text-2xl mb-4">★★★★★</div>
-              <p className="text-gray-300 leading-8 mb-6">
-                “Real Caribbean flavour. Serious heat. Completely addictive.”
-              </p>
+              <p className="text-gray-300 leading-8 mb-6">“Real Caribbean flavour. Serious heat. Completely addictive.”</p>
               <div className="text-white font-bold">— Mike D.</div>
             </div>
           </div>
@@ -280,11 +257,7 @@ export default function App() {
             </div>
 
             <div>
-              <img
-                src={counterTop}
-                alt="Restaurant"
-                className="rounded-3xl border border-[#222] shadow-2xl"
-              />
+              <img src={counterTop} alt="Restaurant" className="rounded-3xl border border-[#222] shadow-2xl" />
             </div>
           </div>
         </div>
@@ -294,11 +267,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 md:px-6 py-12 flex flex-col md:flex-row justify-between gap-10">
           <div>
             <div className="flex items-center gap-5 mb-5">
-              <img
-                src={logo}
-                alt="Famena Logo"
-                className="w-20 h-20 md:w-24 md:h-24 object-contain"
-              />
+              <img src={logo} alt="Famena Logo" className="w-20 h-20 md:w-24 md:h-24 object-contain" />
 
               <div className="text-2xl md:text-3xl font-black text-orange-500">
                 FAMENA’S HOT SAUCE
